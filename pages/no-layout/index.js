@@ -1,8 +1,10 @@
 import { useRouter } from "next/router";
+import { useStoreContext } from "../../store/context/context";
 
 export default function NoLayout () {
-    const { query } = useRouter();
-    console.log(query);
+    // const { query } = useRouter();
+    const { data } = useStoreContext();
+    console.log(data);
 
     return (
         <>
