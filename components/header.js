@@ -12,6 +12,9 @@ const Header = () => {
             <Link href="/">
               <a>Home</a>
             </Link>
+            <Link href="/protected">
+              <a>Protected</a>
+            </Link>
           </li>
           {user ? (
             <>
