@@ -1,11 +1,12 @@
 import React from "react";
 import { StoreProvider } from "../store/context/context";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, props, ...rest }) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  console.log(Component, pageProps, rest);
 
   return getLayout(
-    <StoreProvider>
+    <StoreProvider initialData={props}>
       <Component {...pageProps} />
     </StoreProvider>
   );
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 
 
-export async function getServerSideProps(context) {
+MyApp.getInitialProps = () => {
     return {
         props: { hello: "world" }
     }
