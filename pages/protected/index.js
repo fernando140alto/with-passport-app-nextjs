@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux";
 import Layout from "../../components/layout";
 import { useUser } from "../../lib/hooks";
 
 function Protected() {
   useUser({ redirectTo: "/" });
+  const count = useSelector((state) => state.counter);
+  console.log(count);
 
   return (
     <>
