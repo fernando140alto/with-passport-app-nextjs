@@ -9,6 +9,8 @@
     "@hapi/iron": "6.0.0",
     "@reduxjs/toolkit": "^1.8.0",
     "cookie": "^0.4.1",
+    "humps": "^2.0.1",
+    "lodash": "^4.17.21",
     "next": "latest",
     "next-connect": "0.8.1",
     "passport": "0.4.1",
