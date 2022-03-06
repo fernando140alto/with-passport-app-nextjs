@@ -7,7 +7,7 @@ import { increment } from "../../store/redux/reducer";
 function Protected() {
   useUser({ redirectTo: "/" });
   const count = useSelector((state) => state.counter);
-  console.log(count);
+  // console.log(count);
   const dispatch = useDispatch();
 
 
