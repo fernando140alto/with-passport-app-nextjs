@@ -23,4 +23,8 @@ MyApp.getInitialProps = async () => {
       value: 1,
     },
   });
+
+  return initialState;
 }
+
+export default MyApp;
