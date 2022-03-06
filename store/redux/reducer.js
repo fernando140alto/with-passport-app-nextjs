@@ -26,12 +26,12 @@ export const counterSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(alsoIncrement.fulfilled, (state, action) => {
-      console.log("alsoIncrement.fulfilled");
+      // console.log("alsoIncrement.fulfilled");
       state.value += action.payload;
       state.error = false;
     });
     builder.addCase(alsoIncrement.rejected, (state, action) => {
-        console.log("alsoIncrement.rejected");
+        // console.log("alsoIncrement.rejected");
         state.error = true;
     });
   },

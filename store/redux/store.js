@@ -1,18 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './reducer'
 
-// const store = configureStore({
-//   reducer: {
-//     counter: counterReducer.reducer,
-//   },
-// })
+const store = configureStore({
+  reducer: {
+    counter: counterReducer.reducer,
+  },
+  preloadedState: {
+    counter: {
+       value: 10
+    }
+  },
+})
 
-// export default store;
-
-
-export default function (preloadedState) {
-  return configureStore({
-    reducer: { counter: counterReducer.reducer },
-    preloadedState,
-  })
-}
+export default store;
