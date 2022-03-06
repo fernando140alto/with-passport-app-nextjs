@@ -21,16 +21,16 @@ function initStore(initialState) {
 }
 
 export const initializeStore = (preloadedState) => {
-  console.log(store ? "store already initialized" : "store not initialized");
   let _store = store ?? initStore(preloadedState);
 
   // After navigating to a page with an initial Redux state, merge that state
   // with the current state in the store, and create a new store
   if (preloadedState && store) {
-    console.log("preloadedState", preloadedState);
     _store = initStore({
-      ...store.getState(),
       ...preloadedState,
+      // then spread the actual store state
+      // so we can override the preloaded state
+      ...store.getState(),
     });
     // Reset the current store
     store = undefined;
@@ -38,15 +38,12 @@ export const initializeStore = (preloadedState) => {
 
   // For SSG and SSR always create a new store
   if (typeof window === "undefined") {
-    console.log("window undefined");
     return _store;
   };
   // Create the store once in the client
   if (!store) {
-    console.log("window defined");
     store = _store;
   }
-  console.log("store", store);
 
   return _store;
 };
