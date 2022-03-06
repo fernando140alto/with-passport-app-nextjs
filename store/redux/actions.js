@@ -5,7 +5,7 @@ const mockError = new Error(new Error('Mock error'));
 export const alsoIncrement = createAsyncThunk(
   "counter/alsoIncrement",
   async (error = false, { getState }) => {
-      console.log('alsoIncrement');
+      // console.log('alsoIncrement');
     try {
         if (error) {
             throw mockError;

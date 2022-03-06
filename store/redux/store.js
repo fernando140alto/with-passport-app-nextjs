@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer, { increment } from './reducer'
-import { createWrapper } from 'next-redux-wrapper'
+import counterReducer from './reducer'
 
-const store = () => configureStore({
+const store = configureStore({
   reducer: {
     counter: counterReducer.reducer,
   },
-});
+  preloadedState: {
+    counter: {
+       value: 10
+    }
+  },
+})
 
-store().dispatch(increment());
-
-export const wrapper = createWrapper(store);
+export default store;
